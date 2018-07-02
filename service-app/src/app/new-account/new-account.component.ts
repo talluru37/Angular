@@ -6,13 +6,13 @@ import {LoggingService} from '../logging.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService,DataService]
+  providers: [DataService]
 })
 export class NewAccountComponent {
   
   //@Output() accountAdded = new EventEmitter<{name: string, status: string}>();
   
-  constructor(private loggingService: LoggingService, private dataService: DataService)
+  constructor(private dataService: DataService)
   {
    
   }
@@ -25,10 +25,10 @@ export class NewAccountComponent {
 //      status: accountStatus
 //    });
     
-    this.dataService.accounts.push({name:accountName,status:accountStatus});
+    this.dataService.addAccount({name:accountName,status:accountStatus});
     
    // console.log('A server status changed, new status: ' + accountStatus);
    // service.logStatusChange(accountStatus);
-    this.loggingService.logStatusChange(accountStatus);
+   // this.loggingService.logStatusChange(accountStatus);
   }
 }

@@ -5,8 +5,8 @@ import {LoggingService} from '../logging.service';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css'],
-    providers: [LoggingService]
+  styleUrls: ['./account.component.css']
+   // providers: [LoggingService]
 })
 export class AccountComponent {
   
@@ -16,7 +16,7 @@ export class AccountComponent {
 //  const service = new LoggingService();
   
   
-  constructor(private loggingService: LoggingService,private dataService:DataService)
+  constructor(private dataService:DataService)
   {
    
   }
@@ -29,7 +29,7 @@ export class AccountComponent {
    // console.log('A server status changed, new status: ' + status);
    // service.logStatusChange(status);
     
-    this.loggingService.logStatusChange(status);
+//    this.loggingService.logStatusChange(status);
     this.dataService.updateStatus(this.id,status);
     
   }
